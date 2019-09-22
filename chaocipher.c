@@ -9,9 +9,12 @@
  
 const char *l_alphabet = "HXUCZVAMDSLKPEFJRIGTWOBNYQ";
 const char *r_alphabet = "PTLNBQDEOYSFAVZKGJRIHWXUMC";
+
+int i, j, index, textLength;
+
  
 void chao(const char *in, char *out, int mode, int show_steps) {
-    int i, j, index;
+    
     char store;
     size_t len = strlen(in);
     char left[27], right[27], temp[27];
@@ -55,10 +58,12 @@ void chao(const char *in, char *out, int mode, int show_steps) {
 }
  
 int main(int argc, char const *argv[]) {
-    int sizeOfText = atoi(argv[1]);
+    int textLength = atoi(argv[1]);
     const char *plain_text = argv[2];
-    char *cipher_text = malloc(sizeOfText + 1);
-    char *plain_text2 = malloc(sizeOfText + 1);
+
+    char *cipher_text = malloc(textLength + 1);
+    char *plain_text2 = malloc(textLength + 1);
+
     printf("The original plaintext is : %s\n", plain_text);
     printf("\nThe left and right alphabets after each permutation"
            " during encryption are :\n\n");
@@ -69,7 +74,5 @@ int main(int argc, char const *argv[]) {
     free(cipher_text);
     free(plain_text2);
 
-    
-    printf("size: %d\ntext: %s\n", atoi(argv[1]), argv[2]);
     return 0;
 }
