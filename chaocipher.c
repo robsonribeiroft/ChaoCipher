@@ -4,17 +4,15 @@
  
 #define TRUE 1
 #define FALSE 0
-#define ENCRYPT 2
-#define DECRYPT 3
+ 
+typedef int bool;
+typedef enum { ENCRYPT, DECRYPT } cmode;
  
 const char *l_alphabet = "HXUCZVAMDSLKPEFJRIGTWOBNYQ";
 const char *r_alphabet = "PTLNBQDEOYSFAVZKGJRIHWXUMC";
-
-int i, j, index, textLength;
-
  
-void chao(const char *in, char *out, int mode, int show_steps) {
-    
+void chao(const char *in, char *out, cmode mode, bool show_steps) {
+    int i, j, index;
     char store;
     size_t len = strlen(in);
     char left[27], right[27], temp[27];
@@ -58,12 +56,9 @@ void chao(const char *in, char *out, int mode, int show_steps) {
 }
  
 int main(int argc, char const *argv[]) {
-    int textLength = atoi(argv[1]);
-    const char *plain_text = argv[2];
-
-    char *cipher_text = malloc(textLength + 1);
-    char *plain_text2 = malloc(textLength + 1);
-
+    const char *plain_text = "WELLDONEISBETTERTHANWELLSAID";
+    char *cipher_text = malloc(strlen(plain_text) + 1);
+    char *plain_text2 = malloc(strlen(plain_text) + 1);
     printf("The original plaintext is : %s\n", plain_text);
     printf("\nThe left and right alphabets after each permutation"
            " during encryption are :\n\n");
