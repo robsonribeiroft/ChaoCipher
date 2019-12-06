@@ -20,18 +20,20 @@ int validateInput(){
 }
 
 void execute(){
-    printf("Enter the text to be encrypted(Max of 100 chars): ");
-    scanf("%s", string);
-    textSize = strlen(string);
-    if (validateInput()){
-        char format[textSize+13];
-        sprintf(format, "chaocipher %d %s", textSize, string);
-        printf("the command: %s\n", format);
-        system("pause");
-        system(format);
-    } else {
-        execute();
-    }
+
+    system("./chao_opt");
+    // printf("Enter the text to be encrypted(Max of 100 chars): ");
+    // scanf("%s", string);
+    // textSize = strlen(string);
+    // if (validateInput()){
+    //     char format[textSize+13];
+    //     sprintf(format, "chaocipher %d %s", textSize, string);
+    //     printf("the command: %s\n", format);
+    //     system("pause");
+    //     system(format);
+    // } else {
+    //     execute();
+    // }
     
     
     
@@ -42,10 +44,9 @@ void runWorstCenary(){
 }
 
 void compile(){
-    system("gcc chaocipher.c");
-    system("gcc -o chaocipher chaocipher.c");
+    system("gcc chao_opt.c");
+    system("gcc chao_opt.c -o chao_opt");
     printf("Compilation complete\n");
-    system("pause");
 }
 
 void showMenu(){
