@@ -18,8 +18,8 @@ int i, j, indexFound;
 clock_t startTime, endTime;
 
 void setupKeys(){
-    strcpy(left, l_alphabet);\n
-    strcpy(r
+    strcpy(left, l_alphabet);
+    strcpy(right, r_alphabet);
     // printf("Decrypted text: ");
     // decrypt();ight, r_alphabet);
     indexFound = 0;
